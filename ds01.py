@@ -17,6 +17,7 @@ class DinnerStack:
     self.currIndex = self.items[0]
 
   def pushItem(self,newString):
+  #adds item to front of list and arranges the overall order to accomodate
     newIndex = self.numItems+1
     self.items.append([newString,self.currIndex])
     if self.numItems != 0: 
@@ -29,21 +30,25 @@ class DinnerStack:
     print(self.items[1:])
 
   def popItem(self):
+  #pop the current index and set the current index to the next in the order
     if self.numItems == 0 or self.numItems == 1: return
     dinner = self.items[self.currIndex][0] 
     self.currIndex = self.items[self.currIndex][1]
     return dinner
   
   def peakItem(self):
+  #look at current item but do not change current index yet
     if self.numItems == 0 or self.numItems == 1: return
     return self.items[self.currIndex][0] 
     
   def save(self,fname):
+  #save updates in json file 
     self.items[0] = self.currIndex
     with open(fname,'w') as f:
       json.dump(self.items,f)
 
   def trialRun(self):
+  #testing calls
     self.pushItem("rice")
     self.pushItem("burger")
     print(self.popItem())
