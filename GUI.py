@@ -1,5 +1,5 @@
 from Tkinter import *
-from ds01 import DinnerStack
+from dinnerstack import DinnerStack
 
 class Application(Frame):
     def savequit(self):
