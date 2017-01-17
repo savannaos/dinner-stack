@@ -61,4 +61,4 @@ class DinnerStack:
 
 #DinnerStack('Jfile.txt').trialRun()
 if __name__== '__main__':
-    DinnerStack('Jfile.txt').peakItem()
+    DinnerStack('Jfile.txt').trialRun()
