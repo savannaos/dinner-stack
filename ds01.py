@@ -27,19 +27,19 @@ class DinnerStack:
           break
     self.currIndex = newIndex
     self.numItems+=1
-    print(self.items[1:])
+#    print(self.items[1:])
 
   def popItem(self):
   #pop the current index and set the current index to the next in the order
     if self.numItems == 0 or self.numItems == 1: return
     dinner = self.items[self.currIndex][0] 
     self.currIndex = self.items[self.currIndex][1]
-    return dinner
+    print(dinner)
   
   def peakItem(self):
   #look at current item but do not change current index yet
     if self.numItems == 0 or self.numItems == 1: return
-    return self.items[self.currIndex][0] 
+    print(self.items[self.currIndex][0]) 
     
   def save(self,fname):
   #save updates in json file 
@@ -51,13 +51,14 @@ class DinnerStack:
   #testing calls
     self.pushItem("rice")
     self.pushItem("burger")
-    print(self.popItem())
-    print(self.popItem())
-    print(self.popItem())
-    print(self.popItem())
-    print(self.popItem())
-    print(self.popItem())
+    self.popItem()
+    self.popItem()
+    self.popItem()
+    self.popItem()
+    self.popItem()
+    self.popItem()
     self.save('Jfile.txt')
 
 #DinnerStack('Jfile.txt').trialRun()
-print(DinnerStack('Jfile.txt').peakItem())
+if __name__== '__main__':
+    DinnerStack('Jfile.txt').peakItem()
